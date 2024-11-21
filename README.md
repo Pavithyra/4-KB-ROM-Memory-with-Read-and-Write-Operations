@@ -32,9 +32,8 @@ In this design, we will implement a 4KB ROM. Since ROM is typically read-only, w
 
 4KB = 4096 Bytes = 4096 x 8 bits
 The address width for 4KB memory is 12 bits (2^12 = 4096).
-
-
-// rom_memory.v
+VERILOG CODE FOR 4KB ROM MEMORY
+```
 module rom_memory (
     input wire clk,
     input wire write_enable,   // Signal to enable write operation
@@ -55,13 +54,11 @@ module rom_memory (
         data_out <= rom[address];
     end
 endmodule
+```
 ![Screenshot 2024-11-21 190439](https://github.com/user-attachments/assets/ceae393e-dafd-4ca6-b3a4-c4df92771c45)
 
 Testbench for 4KB ROM Memory
-
-// rom_memory_tb.v
-`timescale 1ns / 1ps
-
+```
 module rom_memory_tb;
 
     // Inputs
@@ -116,7 +113,7 @@ module rom_memory_tb;
     end
 
 endmodule
-
+```
 ![Screenshot 2024-11-21 190519](https://github.com/user-attachments/assets/6de54f52-a120-49af-aa9c-6831db1326da)
 
 Conclusion
